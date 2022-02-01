@@ -6,7 +6,7 @@ Using 3d Deeplabcut in NMRC
 
 1. Activate deeplabcut environment in Anaconda
 
-'conda activate DEEPLABCUT'
+> conda activate DEEPLABCUT
 
 2. 
 
