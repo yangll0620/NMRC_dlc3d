@@ -28,12 +28,11 @@ markerColor: r
 # Number of cameras, camera names, path of the config files, shuffle index and trainingsetindex used to analyze videos:
 num_cameras: 2
 camera_names:
+- camera-0
 - camera-1
-- camera-2
 scorername_3d: DLC_3D # Enter the scorer name for the 3D output
-config_file_camera-1: /home/mackenzie/DEEPLABCUT/DeepLabCut/2DprojectCam1-Mackenzie-2019-06-05/config.yaml
-config_file_camera-2: /home/mackenzie/DEEPLABCUT/DeepLabCut/2DprojectCam2-Mackenzie-2019-06-05/config.yaml
-shuffle_camera-1: 1
 trainingsetindex_camera-1: 0
-shuffle_camera-2: 1
 trainingsetindex_camera-2: 0
+config_file_camera-0: /home/mackenzie/DEEPLABCUT/DeepLabCut/2DprojectCam2-Mackenzie-2019-06-05/config.yaml
+shuffle_camera-0: 1
+shuffle_camera-1: 1

@@ -26,6 +26,21 @@ Using 3d Deeplabcut in NMRC
 > Cover several distances, and within each distance, cover all parts of the image view (all corners and center).
 
 
+4. Calibration
+
+(CRITICAL!) Edit the config.yaml file to set the camera names and run the following code (detect corners and remove bad images)
+
+`deeplabcut.calibrate_cameras(config_path3d, cbrow=8, cbcol=6, calibrate=False, alpha=0.9)`
+
+And then run the calibrate_cameras() function again with calibrate=True (computes the intrinsic and extrinsic parameters for each camera)
+
+`deeplabcut.calibrate_cameras(config_path3d, cbrow=8, cbcol=6, calibrate=True, alpha=0.9)`
+
+5. Check for Undistortion (not fully understand what to get and how to check the results)
+
+`deeplabcut.check_undistortion(config_path3d, cbrow=8, cbcol=6)`
+
+
 ## Documentation from Deeplabcut Official Website
 https://github.com/DeepLabCut/DeepLabCut/blob/master/docs/Overviewof3D.md
 
