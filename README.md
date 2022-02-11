@@ -39,9 +39,9 @@ Using 3d Deeplabcut in NMRC
 
     `deeplabcut.calibrate_cameras(config_path3d, cbrow=8, cbcol=6, calibrate=False, alpha=0.9)`
 
-4-3 Run the calibrate_cameras() function again with calibrate=True (computes the intrinsic and extrinsic parameters for each camera)
+    4-3 Run the calibrate_cameras() function again with calibrate=True (computes the intrinsic and extrinsic parameters for each camera)
 
-    `deeplabcut.calibrate_cameras(config_path3d, cbrow=8, cbcol=6, calibrate=True, alpha=0.9)`
+        `deeplabcut.calibrate_cameras(config_path3d, cbrow=8, cbcol=6, calibrate=True, alpha=0.9)`
 
 5. Check for Undistortion (not fully understand what to get and how to check the results)
 
