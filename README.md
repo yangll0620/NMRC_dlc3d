@@ -28,11 +28,13 @@ Using 3d Deeplabcut in NMRC
 
 4. Calibration
 
-(CRITICAL!) Edit the config.yaml file to set the camera names and run the following code (detect corners and remove bad images)
+4-1 Edit the config.yaml file to set the camera names.
+
+4-2 Run the following code (detect corners and remove bad images)
 
 `deeplabcut.calibrate_cameras(config_path3d, cbrow=8, cbcol=6, calibrate=False, alpha=0.9)`
 
-And then run the calibrate_cameras() function again with calibrate=True (computes the intrinsic and extrinsic parameters for each camera)
+4-3 Run the calibrate_cameras() function again with calibrate=True (computes the intrinsic and extrinsic parameters for each camera)
 
 `deeplabcut.calibrate_cameras(config_path3d, cbrow=8, cbcol=6, calibrate=True, alpha=0.9)`
 
