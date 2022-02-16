@@ -8,37 +8,44 @@ Using 3d Deeplabcut in NMRC
 
     `conda activate DEEPLABCUT`
 
-2.  Extract Calibration Images
-
-    `ffmpeg -i v_20220114-142831_camera0.avi -vframes 500 cam0\camera-0-%03d.jpg`
+2.  Extract and Select Calibration Images 
     
-    `ffmpeg -i v_20220114-142831_camera1.avi -vframes 500 cam1\camera-1-%03d.jpg`
+    2-1 Extract Images from videos through running the following codes
 
-3. Select Pairs of Calibration Images from Extracted Images (at 70 Pairs)
+    When recording videos: 
 
-> Aim for at least 70 pairs of images
+    > Keep the orientation of the chessboard same and do not rotate more than 30 degrees.
 
-    > camera-0-001.jpg and camera-1-001.jpg are one pair.
-    > camera-0-033.jpg and camera-1-033.jpg are another pair.
+    > Cover several distances, and within each distance, cover all parts of the image view (all corners and center).
 
-> Keep the orientation of the chessboard same and do not rotate more than 30 degrees.
+        `ffmpeg -i v_20220114-142831_camera0.avi -vframes 500 cam0\camera-0-%03d.jpg`
 
-> Cover several distances, and within each distance, cover all parts of the image view (all corners and center).
+        `ffmpeg -i v_20220114-142831_camera1.avi -vframes 500 cam1\camera-1-%03d.jpg`
 
+    2-2. Select Pairs of Calibration Images from Extracted Images (at 70 Pairs) 
+
+    > Aim for at least 70 pairs of images
+
+        > camera-0-001.jpg and camera-1-001.jpg are one pair.
+        > camera-0-033.jpg and camera-1-033.jpg are another pair.
+
+3. Place the Calibration Images into the calibration_images directory.
 
 4. Calibration
 
-(CRITICAL!) Edit the config.yaml file to set the camera names and run the following code (detect corners and remove bad images)
+    4-1 Edit the config.yaml file to set the camera names.
 
-`deeplabcut.calibrate_cameras(config_path3d, cbrow=8, cbcol=6, calibrate=False, alpha=0.9)`
+    4-2 Run the following code (detect corners and remove bad images)
 
-And then run the calibrate_cameras() function again with calibrate=True (computes the intrinsic and extrinsic parameters for each camera)
+    `deeplabcut.calibrate_cameras(config_path3d, cbrow=8, cbcol=6, calibrate=False, alpha=0.9)`
 
-`deeplabcut.calibrate_cameras(config_path3d, cbrow=8, cbcol=6, calibrate=True, alpha=0.9)`
+    4-3 Run the calibrate_cameras() function again with calibrate=True (computes the intrinsic and extrinsic parameters for each camera)
+
+        `deeplabcut.calibrate_cameras(config_path3d, cbrow=8, cbcol=6, calibrate=True, alpha=0.9)`
 
 5. Check for Undistortion (not fully understand what to get and how to check the results)
 
-`deeplabcut.check_undistortion(config_path3d, cbrow=8, cbcol=6)`
+    `deeplabcut.check_undistortion(config_path3d, cbrow=8, cbcol=6)`
 
 
 6. 
