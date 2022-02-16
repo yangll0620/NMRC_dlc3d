@@ -41,6 +41,11 @@ And then run the calibrate_cameras() function again with calibrate=True (compute
 `deeplabcut.check_undistortion(config_path3d, cbrow=8, cbcol=6)`
 
 
+6. 
+
+config_file_camera-0: C:\Users\lingling\Desktop\dlcProject\dlcDemo\test-yll-2022-02-04\config.yaml
+config_file_camera-1: C:\Users\lingling\Desktop\dlcProject\dlcDemo\testcam1-yll-2022-02-05\config.yaml
+
 ## Documentation from Deeplabcut Official Website
 https://github.com/DeepLabCut/DeepLabCut/blob/master/docs/Overviewof3D.md
 
